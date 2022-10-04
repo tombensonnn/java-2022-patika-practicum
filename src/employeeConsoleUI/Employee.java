@@ -17,57 +17,7 @@ public class Employee {
 		this.hireYear = hireYear;
 	}	
 	
-	public Employee() {
-		
-	}
 	
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public int getWorkHours() {
-		return workHours;
-	}
-
-
-	public void setWorkHours(int workHours) {
-		this.workHours = workHours;
-	}
-
-
-	public int getHireYear() {
-		return hireYear;
-	}
-
-
-	public void setHireYear(int hireYear) {
-		this.hireYear = hireYear;
-	}
-	
-
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
 	
 	// operations
 	
@@ -106,15 +56,27 @@ public class Employee {
 		int differenceOfYear = currentYear - this.hireYear;
 		
 		if(differenceOfYear < 10) {
-			setSalary(this.salary += this.salary*0.05);
+			this.salary += this.salary*0.05;
 		}
-		else if(differenceOfYear > 10 && differenceOfYear < 20) {
-			setSalary(this.salary += this.salary*0.1);			
+		else if(differenceOfYear > 9 && differenceOfYear < 20) {
+			this.salary += this.salary*0.1;			
+		}
+		else if(differenceOfYear > 19) {
+			this.salary += this.salary*0.15;
 		}
 		
-		System.out.println(getSalary());
+		System.out.println(this.salary);
 		
 	}
 	
+	public String toString()
+	{
+		 return
+				 "Çalışanın İsmi: " + this.name +
+				 "\nÇalışanın Maaşı: " + this.salary + 
+				 "\nÇalışanın Haftalık Çalışma Saati: " + this.workHours +
+				 "\nÇalışanın İşe Başlangıç Yılı: " + this.hireYear;
+				 
+	}
 
 }

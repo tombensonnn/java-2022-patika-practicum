@@ -9,17 +9,13 @@ public class consoleUI {
 		// belirtildiğinden dolayı belirtildiği gibi uygulamış bulundum.
 		
 		
-		Employee employee = new Employee();
-		
-		employee.setId(1);
-		employee.setName("can");
-		employee.setSalary(2500);
-		employee.setWorkHours(42);
-		employee.setHireYear(2019);
+		Employee employee = new Employee(1,"Can Uyumaz", 2500, 42, 2019);
 		
 		employee.tax();
 		employee.bonus();
 		employee.raiseSalary();
+		
+		System.out.println(employee.toString()); 
 		
 	}
 
